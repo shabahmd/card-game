@@ -11,7 +11,9 @@ import './styles/normalize.css';
 
 const App = () => {
   return (
-    <LoadingPage />
+    <div className='App'>
+      <LoadingPage />
+    </div>
   )
 }
 
