@@ -3,6 +3,7 @@ import "../styles/StartPage.scss";
 import logo from "../assets/img/logo.png";
 
 import Footer from '/Footer';
+
 function StartPage() {
     return (
         <>
