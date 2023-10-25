@@ -1,13 +1,12 @@
 import Footer from './Footer';
-import logo from '../assests/img/logo.png';
-import stan from '../assests/img/characters/stan.webp';
-import dipper from '../assests/img/characters/dipper.webp';
-import ford from '../assests/img/characters/ford.png';
-import gideon from '../assests/img/characters/gideon.webp';
-import mabel from '../assests/img/characters/mabel.webp';
+import logo from '../assets/img/logo.png';
+import stan from '../assets/img/characters/stan.webp';
+import dipper from '../assets/img/characters/dipper.webp';
+import ford from '../assets/img/characters/ford.png';
+import gideon from '../assets/img/characters/gideon.webp';
+import mabel from '../assets/img/characters/mabel.webp';
 
-
-function GamePage() {
+function GamePage(goBackToStartPage, playClick, playFlip) {
     return (
         <>
             <header>
@@ -18,7 +17,7 @@ function GamePage() {
                 </div>
             </header>
 
-            <div className='ScoreContainer'>
+            <div className='playGround'>
                 <div className='card'>
                     <div className='CharacterHolder'
                         style={{ backgroundImage: `url(${stan}) ` }} />

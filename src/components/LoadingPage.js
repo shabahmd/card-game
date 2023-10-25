@@ -7,6 +7,6 @@ function LoadingPage() {
             <img src={dipperRunning} alt="dipper Runnung " />
         </div>
     );
-};
+}
 
 export default LoadingPage
