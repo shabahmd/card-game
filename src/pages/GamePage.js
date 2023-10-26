@@ -47,17 +47,43 @@ function GamePage({
     }, []);
 
 
+    const handleCardClick = (character) => {
 
-    const restartTheGame = () => {
-        setScore(0);
-        setResult('');
-        CharactersToPlayWith.forEach((character) => {
-            character.clicked = false;
+
+        setIsClicked(ture);
+
+        if (isClicked) return
+
+        let turnResult = stateRoundResult(character);
+        setResult(turnResult)
+        character.clicked = true;
+
+        if (turnResult = '') {
+            if (turnResult = 'win') countScore();
+            setIsClicked(false)
+
         }
-        )
+        countScore;
+    }
 
-        getCharactersToPlayWith();
-    };
+
+
+
+}
+
+
+
+
+const restartTheGame = () => {
+    setScore(0);
+    setResult('');
+    CharactersToPlayWith.forEach((character) => {
+        character.clicked = false;
+    }
+    )
+
+    getCharactersToPlayWith();
+};
 
 }
 
