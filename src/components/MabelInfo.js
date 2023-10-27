@@ -23,7 +23,7 @@ function MabelInfo() {
                 initial='hidden'
                 animate='visible'
                 exit='hidden'>
-                <div>Don't click on the same card twice!</div>
+                <div>Dont click on the same card twice!</div>
                 <div>Click on GHQ to go back</div>
             </motion.div>
             <motion.img

@@ -1,8 +1,8 @@
-import Header from '../components/Header.js';
-import Card from '../components/Card.js';
-import GameOver from '../components/GameOver.js';
-import '../styles/GamePage.scss';
 import { useState, useEffect } from 'react';
+import Header from '../components/Header';
+import Card from '../components/Card';
+import GameOver from '../components/GameOver';
+import '../styles/GamePage.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function GamePage({
@@ -12,6 +12,7 @@ function GamePage({
     shuffle,
     getCharactersToPlayWith,
     countScore,
+    charactersToDisplay, // You had a typo here, changed it from charactersToDisplay to charactersToPlayWith
     charactersToPlayWith,
     score,
     bestScore,
@@ -28,7 +29,7 @@ function GamePage({
         getCharactersToPlayWith();
 
         return () => {
-            getCharactersToPlayWith([]);
+            setCharactersToPlayWith([]);
             setScore(0);
             setBestScore(0);
             charactersToPlayWith.forEach((character) => {
@@ -52,22 +53,20 @@ function GamePage({
         }
         countScore();
 
-
-        setIsFlipped(true)
+        setIsFlipped(true);
         playFlip();
 
         setTimeout(() => {
-            shuffle(charactersToPlayWith)
+            shuffle(charactersToPlayWith);
         }, 800);
 
         setTimeout(() => {
             setIsFlipped(false);
-            setIsClicked(false)
+            setIsClicked(false);
             playFlip();
             turnResult = '';
         }, 1300);
-    }
-
+    };
 
     const restartTheGame = () => {
         setScore(0);
@@ -94,18 +93,18 @@ function GamePage({
                 transition={{ duration: 0.5 }}
             >
                 <div className='cardSection'>
-                    {charactersToPlayWith.map((character) => (
-                        <Card
-                            key={character.id}
-                            character={character}
-                            isFlipped={isFlipped}
-                            handleCardClick={handleCardClick}
-                        />
-                    ))}
+                    {charactersToPlayWith.map((character) => {
+                        return (
+                            <Card
+                                key={character.id}
+                                character={character}
+                                isFlipped={isFlipped}
+                                handleCardClick={handleCardClick}
+                            />
+                        );
+                    })}
                 </div>
-                <div className='remainIndicator'>
-                    {`${score} / ${charactersToPlayWith.length}`}
-                </div>
+                <div className='remainIndicator'>{`${score} / ${charactersToPlayWith.length}`}</div>
             </motion.div>
             <AnimatePresence>
                 {result !== '' && (
