@@ -1,4 +1,4 @@
-import mabelInfo from './assets/img/mabel/info-info-png';
+import mabelInfo from '../assets/img/mabel-info.png';
 import { motion } from 'framer-motion';
 
 function MabelInfo() {

@@ -5,6 +5,7 @@ import { ReactComponent as Music } from '../assets/img/music_sign.svg';
 import { ReactComponent as MusicOff } from '../assets/img/music_off.svg';
 import { ReactComponent as QuestionMark } from '../assets/img/question_mark.svg';
 import { ReactComponent as Cross } from '../assets/img/cross.svg';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import '../styles/Footer.scss';
